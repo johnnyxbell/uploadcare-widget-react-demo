@@ -12,6 +12,7 @@ app.set("views", path.join(__dirname));
 app.set("view engine", "ejs");
 
 app.get("/", render);
+app.get("/page*", render);
 
 if(USE_NODE_MODULES) {
   app.use("/node_modules", Express.static(path.join(__dirname, "..", "/node_modules/")));
