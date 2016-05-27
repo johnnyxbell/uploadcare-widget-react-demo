@@ -12,7 +12,7 @@ class Uploader extends Component {
   render() {
     return (
       <div>
-        <input type="text" role="uploadcare-uploader"/>
+        <input type="text" role="uploadcare-uploader" data-preview-step/>
       </div>
     )
   }

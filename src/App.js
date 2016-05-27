@@ -1,10 +1,13 @@
 import React from "react";
-import Uploader from "./components/Uploader";
+import { Link } from "react-router";
 
-const App = () => (
+const App = ({
+  children
+}) => (
   <div>
     <h1>Try Uploadcare</h1>
-    <Uploader />
+    <hr/>
+    {children}
   </div>
 );
 
