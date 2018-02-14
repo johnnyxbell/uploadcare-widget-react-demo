@@ -2,6 +2,20 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const WIDGET_PATH = process.env.WIDGET_PATH || false
+
+const resolve = WIDGET_PATH
+  ? {
+    alias: {
+      'uploadcare-widget': path.join(
+        WIDGET_PATH, 'uploadcare-widget', 'pkg', 'latest', 'uploadcare.full.min.js'
+      ),
+    },
+  }
+  : {}
+
+console.log(resolve)
+
 module.exports = {
   entry: {app: './client/index.js'},
   plugins: [
@@ -16,9 +30,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules|_Uploadcare)/,
         use: {loader: 'babel-loader'},
       },
     ],
   },
+  resolve,
 }
