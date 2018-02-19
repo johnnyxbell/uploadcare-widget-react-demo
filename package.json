@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint .",
     "build": "webpack --config webpack.prod.config.js",
-    "start": "webpack-dev-server --open --config webpack.dev.config.js"
+    "start": "webpack-dev-server --open --config webpack.dev.config.js",
+    "ngrok": "ngrok http 8080 -host-header=\"localhost:8080\""
   },
   "repository": {
     "type": "git",
