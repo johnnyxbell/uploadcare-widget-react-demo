@@ -8,7 +8,7 @@ const resolve = WIDGET_PATH
   ? {
     alias: {
       'uploadcare-widget': path.join(
-        WIDGET_PATH, 'uploadcare-widget', 'pkg', 'latest', 'uploadcare.min.js'
+        WIDGET_PATH, 'uploadcare-widget', 'pkg', 'latest', 'uploadcare.js'
       ),
       'jquery': path.join(__dirname, 'node_modules', 'jquery', 'dist', 'jquery.min.js'),
     },
