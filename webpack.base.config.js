@@ -8,8 +8,9 @@ const resolve = WIDGET_PATH
   ? {
     alias: {
       'uploadcare-widget': path.join(
-        WIDGET_PATH, 'uploadcare-widget', 'pkg', 'latest', 'uploadcare.full.min.js'
+        WIDGET_PATH, 'uploadcare-widget', 'pkg', 'latest', 'uploadcare.min.js'
       ),
+      'jquery': path.join(__dirname, 'node_modules', 'jquery', 'dist', 'jquery.min.js'),
     },
   }
   : {}
@@ -30,7 +31,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|_Uploadcare)/,
+        exclude: /(node_modules|pkg)/,
         use: {loader: 'babel-loader'},
       },
     ],
